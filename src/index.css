@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,7 +12,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -25,6 +25,7 @@ code {
   color: rgb(54, 5, 5);
   border-style: none;
   border-radius: 5px;
+  display: column;
 }
 
 .pupi {
@@ -35,14 +36,43 @@ code {
   font-weight: bold;
   text-align: center;
   border-style: groove;
+  border-color: rgb(54, 5, 5);
+  border-width: 0.1em;
   text-decoration: none;
-  animation:blinkingText 2.2s infinite;
+  animation: blinkingText 2.2s infinite;
 }
 
-@keyframes blinkingText{
-    0%{     color: rgb(178, 212, 24);    }
-    49%{    color: rgb(51, 13, 4); }
-    60%{    color:rgb(228, 71, 13); }
-    99%{    color:rgb(2, 59, 2);  }
-    100%{   color: rgb(2, 15, 92);    }
+@keyframes blinkingText {
+  0% {
+    color: rgb(178, 212, 24);
+  }
+  49% {
+    color: rgb(51, 13, 4);
+  }
+  60% {
+    color: rgb(228, 71, 13);
+  }
+  99% {
+    color: rgb(2, 59, 2);
+  }
+  100% {
+    color: rgb(2, 15, 92);
+  }
+}
+
+.highscorelink {
+  font-size: 25px;
+  margin-top: 85px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-style: groove;
+  border-color: rgb(54, 5, 5);
+  border-width: 0.1em;
+  text-decoration: none;
+  color: rgb(5, 3, 22);
+}
+
+.highscorepos {
+  margin-top: 10em;
 }
