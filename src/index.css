@@ -39,10 +39,10 @@ code {
   border-color: rgb(54, 5, 5);
   border-width: 0.1em;
   text-decoration: none;
-  animation: blinkingText 2.2s infinite;
+  animation: pulse 7s infinite;
 }
 
-@keyframes blinkingText {
+@keyframes pulse {
   0% {
     color: rgb(178, 212, 24);
   }
