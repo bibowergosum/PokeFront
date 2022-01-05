@@ -5,9 +5,9 @@ const home = () => {
     return (
         <div className='home'>
             <h1>Wähle dein Pokemon und bekämpfe alle anderen! Gibt eh zu viele.</h1>
-            <Link to={`Hier ist dann ein link`} className="pupi" >FIGHT!</Link>
+            <Link to={"Auswahl"} className="pupi" >FIGHT!</Link>
             
-            <p className="highscorepos"><Link to={`Hier ist dann ein link zu den HS`} className="highscorelink" >Highscores</Link></p>
+            <p className="highscorepos"><Link to={"highscore"} className="highscorelink" >Highscores</Link></p>
         </div>
     )
 }

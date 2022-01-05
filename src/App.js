@@ -1,6 +1,9 @@
 import './index.css';
 import {Routes, Route} from "react-router-dom";
 import Home from './components/home.js';
+import Auswahl from './components/auswahl.js';
+import Arena from './components/arena.js'
+import Highscore from './components/highscore';
 import {useState, useEffect} from "react";
 
 function App() {
@@ -17,7 +20,10 @@ function App() {
      <>
      {pokemon ? (<div className="App">
     <Routes>
-          <Route path="/" element={<Home />} />  
+          <Route path="/" element={<Home />} /> 
+          <Route path="auswahl" element={<Auswahl pokemon={pokemon} />} /> 
+          <Route path="auswahl/arena" element={<Arena pokemon={pokemon} />} /> 
+          <Route path="highscore" element={<Highscore pokemon={pokemon} />} /> 
       </Routes>
    </div>) : ("Loading...")}
    </>
