@@ -3,9 +3,9 @@ import {Link, useParams} from "react-router-dom"
 
 
 const Detail = (pokemon) => {
-    const { id } = useParams();
+    // const { info } = useParams();
     
-    console.log(pokemon.find((element) => element.id == id))
+    // console.log(pokemon.find((element) => element.info == info))
  
     return(
         // <>

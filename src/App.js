@@ -33,7 +33,7 @@ console.log(pokemon)
           <Route path="/" element={<Home />} /> 
           <Route path="auswahl" element={<Auswahl pokemon={pokemon} />} /> 
           <Route path="auswahl/:id" element={<AuswahlID pokemon={pokemon} />} /> 
-          <Route path="detail/:id/:info" element={<Detail pokemon={pokemon} />} /> 
+          <Route path="auswahl/:id/:info" element={<Detail pokemon={pokemon} />} /> 
           <Route path="auswahl/arena" element={<Arena pokemon={pokemon} />} /> 
           <Route path="highscore" element={<Highscore pokemon={pokemon} />} /> 
       </Routes>
