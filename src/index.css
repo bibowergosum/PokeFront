@@ -76,3 +76,33 @@ code {
 .highscorepos {
   margin-top: 10em;
 }
+
+body,
+html {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  background-image: url("https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/seasons/season15/season15_ep23_ss01.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.player {
+  margin: auto;
+  border-color: black;
+  border-style: double;
+}
+
+li {
+  list-style-type: none;
+  font-size: xx-large;
+  font-weight: bold;
+}
+p {
+  font-size: xx-large;
+  font-weight: bold;
+}
