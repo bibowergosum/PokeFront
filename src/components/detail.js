@@ -1,19 +1,31 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 
 
-const detail = (pokemon) => {
+const Detail = (pokemon) => {
+    const { id } = useParams();
+    
+    console.log(pokemon.find((element) => element.id == id))
  
- console.log(pokemon)
     return(
-        <div>
-            <h2>Mehr Info über dein Pokemon</h2>
-
-            <Link to={"../"} className="zurück" >Hauptmenü</Link>
-            <hr></hr>
-            <Link to={"../auswahl/:id"} className="zurück" >Zurück</Link>
-        </div>
+        // <>
+        // {poke ? ( <div>
+        //     <h2>Mehr Info über dein Pokemon</h2>
+        //     <h2>{poke.name.english}</h2>
+        //     <p>{poke.type[0]} {poke.type[1]} </p>
+        //     <p>HP: {poke.base.HP}</p>
+        //     <p>Attack: {poke.base.Attack}</p>
+        //     <p>Defense: {poke.base.Defense}</p>
+        //     <p>Sp. Attack: {poke.base.Speed}</p>    
+        //     <p>Sp. Defense: {poke.base.Speed}</p>
+        //     <p>Speed: {poke.base.Speed}</p>
+        //     <Link to={"../auswahl/:id"} className="zurück" >Zurück</Link>
+        //     <hr></hr>
+        //     <Link to={"../"} className="zurück" >Hauptmenü</Link>
+        // </div>):' ...loading'}
+        // </>
+    <div>Hallo</div>
     )
 }
 
-export default detail
+export default Detail

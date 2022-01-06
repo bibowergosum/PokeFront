@@ -14,8 +14,7 @@ const auswahl = ({pokemon}) => {
         {pokemon.map((poke, index) => (        
             <div className='post, container' key={index}>    
             <h2 className='title'>{poke.name.english}</h2>          
-            <p>{poke.type[0]} {poke.type[1]}</p>
-            {console.log(poke.type)} 
+            <p>{poke.type[0]} {poke.type[1]}</p> 
             <Link to={`/auswahl/${poke.id}`} className="pupi" >DETAILS</Link>    
             </div>       
         ))}     

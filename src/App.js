@@ -10,6 +10,7 @@ import {useState, useEffect} from "react";
 
 function App(props) {
   const [pokemon, setPokemon] = useState();
+  // const [pokePic, setPokePic] = useState();
 
   useEffect(() => {
     fetch ("https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json")
@@ -17,7 +18,14 @@ function App(props) {
       .then((data) => setPokemon(data))
       .catch((err) => console.log(err));
   }, []);
-   console.log(pokemon)
+console.log(pokemon)
+  // useEffect(() => {
+  //   fetch ("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/809.png")
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data))
+  //   .catch((err) => console.log(err));
+  // }, [])
+
   return (
      <>
      {pokemon ? (<div className="App">
@@ -25,7 +33,7 @@ function App(props) {
           <Route path="/" element={<Home />} /> 
           <Route path="auswahl" element={<Auswahl pokemon={pokemon} />} /> 
           <Route path="auswahl/:id" element={<AuswahlID pokemon={pokemon} />} /> 
-          <Route path="auswahl/:id/:info" element={<Detail pokemon={pokemon} />} /> 
+          <Route path="detail/:id/:info" element={<Detail pokemon={pokemon} />} /> 
           <Route path="auswahl/arena" element={<Arena pokemon={pokemon} />} /> 
           <Route path="highscore" element={<Highscore pokemon={pokemon} />} /> 
       </Routes>
