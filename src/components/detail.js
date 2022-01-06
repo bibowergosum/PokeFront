@@ -24,7 +24,11 @@ const Detail = (pokemon) => {
         //     <Link to={"../"} className="zurück" >Hauptmenü</Link>
         // </div>):' ...loading'}
         // </>
-    <div>Hallo</div>
+    <div>
+        <Link to={"../auswahl/:id"} className="zurück" >Zurück</Link>
+        <hr></hr>
+        <Link to={"../"} className="zurück" >Hauptmenü</Link>
+    </div>
     )
 }
 
