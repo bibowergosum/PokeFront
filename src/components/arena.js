@@ -1,18 +1,23 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import {Link} from "react-router-dom"
 
 
-const arena = (pokemon) => {
- 
+const Arena = ({selectPokemon}) => {
+    const [kampfPokemon, setKampfPokemon] = useState;
+    useEffect(() => {
+        fetch ("https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json")
+          .then((response) => response.json())
+          .then((data) => setKampfPokemon(data))
+          .catch((err) => console.log(err));
+      }, []);
+ console.log(selectPokemon)
  
     return(
         <div>
             <h2>Hier kämpfen die Pokemon</h2>
-            <Link to={"../auswahl"} className="zurück" >Neu wählen</Link>
-            <hr></hr>
-            <Link to={"../"} className="zurück" >Hauptmenü</Link>
+           
         </div>
     )
 }
 
-export default arena
+export default Arena
