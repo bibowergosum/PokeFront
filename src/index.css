@@ -76,3 +76,35 @@ code {
 .highscorepos {
   margin-top: 10em;
 }
+
+/*AuswahlID*/
+.AuswahlID {
+  text-align: center;
+}
+
+.AuswahlID p {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.zurück {
+  text-decoration: none;
+  justify-content: center;
+  color: rgb(31, 18, 214);
+  font-weight: bolder;
+}
+
+.pokeImage {
+  width: 15%;
+  height: auto;
+}
+
+/*detail*/
+.detail {
+  text-align: center;
+}
+
+.detail p {
+  text-align: center;
+  font-weight: bolder;
+}

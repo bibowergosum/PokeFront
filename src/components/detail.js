@@ -9,8 +9,8 @@ const Detail = ({pokemon}) => {
  
     return(
          <>
-         {pokeDetail ? ( <div>
-             <h2>Mehr Info über dein pokeDetailmon</h2>
+         {pokeDetail ? ( <div className='detail'>
+             <h2>Mehr Infos über dein Pokemon</h2>
              <h2>{pokeDetail.name.english}</h2>
              <p>{pokeDetail.type[0]} {pokeDetail.type[1]} </p>
              <p>HP: {pokeDetail.base.HP}</p>
@@ -19,8 +19,9 @@ const Detail = ({pokemon}) => {
              <p>Sp. Attack: {pokeDetail.base[ 'Sp. Attack' ]}</p>    
              <p>Sp. Defense: {pokeDetail.base[ 'Sp. Defense' ]}</p>
              <p>Speed: {pokeDetail.base.Speed}</p>
+             <br></br>
              <Link to={`../auswahl/${id}`} className="zurück" >Zurück</Link>
-             <hr></hr>
+             <br></br><br></br>
              <Link to={"../"} className="zurück" >Hauptmenü</Link>
          </div>):' ...loading'}
          </>
