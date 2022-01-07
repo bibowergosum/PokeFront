@@ -19,12 +19,12 @@ function App(props) {
       .catch((err) => console.log(err));
   }, []);
 console.log(pokemon)
-  // useEffect(() => {
-  //   fetch ("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/809.png")
-  //   .then((response) => response.json())
-  //   .then((data) => console.log(data))
-  //   .catch((err) => console.log(err));
-  // }, [])
+  useEffect(() => {
+    fetch ("https://pokeapi.co/api/v2/pokemon?limit=809%27")
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
+  }, [])
 
   return (
      <>
@@ -34,7 +34,6 @@ console.log(pokemon)
           <Route path="auswahl" element={<Auswahl pokemon={pokemon} />} />
           <Route path="/auswahl/:id" element={<AuswahlID pokemon={pokemon}/>} />
           <Route path="/auswahl/:id/:info" element={<Detail pokemon={pokemon}/>} />
-          <Route path="auswahl/arena" element={<Arena pokemon={pokemon} />} /> 
           <Route path="highscore" element={<Highscore pokemon={pokemon} />} /> 
       </Routes>
    </div>) : ("Loading...")}
