@@ -10,7 +10,6 @@ import {useState, useEffect} from "react";
 
 function App(props) {
   const [pokemon, setPokemon] = useState();
-  // const [pokePic, setPokePic] = useState();
 
   useEffect(() => {
     fetch ("https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json")
@@ -18,13 +17,6 @@ function App(props) {
       .then((data) => setPokemon(data))
       .catch((err) => console.log(err));
   }, []);
-console.log(pokemon)
-  useEffect(() => {
-    fetch ("https://pokeapi.co/api/v2/pokemon?limit=809%27")
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err));
-  }, [])
 
   return (
      <>
