@@ -1,10 +1,9 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import {Link, useParams, Outlet} from "react-router-dom"
 
 
-const auswahl = ({pokemon}) => {
+const Auswahl = ({pokemon}) => {
    
- 
     return(
         <div>
             <h2>Wähle dein Pokemon</h2>
@@ -22,4 +21,4 @@ const auswahl = ({pokemon}) => {
     )
 }
 
-export default auswahl
+export default Auswahl

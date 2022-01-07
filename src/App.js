@@ -31,9 +31,9 @@ console.log(pokemon)
      {pokemon ? (<div className="App">
     <Routes>
           <Route path="/" element={<Home />} /> 
-          <Route path="auswahl" element={<Auswahl pokemon={pokemon} />} /> 
-          <Route path="auswahl/:id" element={<AuswahlID pokemon={pokemon} />} /> 
-          <Route path="auswahl/:id/:info" element={<Detail pokemon={pokemon} />} /> 
+          <Route path="auswahl" element={<Auswahl pokemon={pokemon} />} />
+          <Route path="/auswahl/:id" element={<AuswahlID pokemon={pokemon}/>} />
+          <Route path="/auswahl/:id/:info" element={<Detail pokemon={pokemon}/>} />
           <Route path="auswahl/arena" element={<Arena pokemon={pokemon} />} /> 
           <Route path="highscore" element={<Highscore pokemon={pokemon} />} /> 
       </Routes>
@@ -43,8 +43,3 @@ console.log(pokemon)
 }
 
 export default App;
-
-
-//         <Route path="products" element={<Products autos={autos}/>} />
-  //         <Route path="auto/:id" element={<Details autos={autos}/>} />
-    //  <div>{pokemon[0].name.english}</div>
