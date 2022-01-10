@@ -12,6 +12,7 @@ const Detail = ({pokemon}) => {
          {pokeDetail ? ( <div className='detail'>
              <h2>Mehr Infos über dein Pokemon</h2>
              <h2>{pokeDetail.name.english}</h2>
+             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeDetail.id}.png`} className='pokeImage'></img>
              <p>{pokeDetail.type[0]} {pokeDetail.type[1]} </p>
              <p>HP: {pokeDetail.base.HP}</p>
              <p>Attack: {pokeDetail.base.Attack}</p>
