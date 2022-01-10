@@ -8,8 +8,10 @@ const Arena = ({selectPokemon}) => {
     const [kampfPokemon, setKampfPokemon] = useState();
     const [randomPokemon, setRandomPokemon] = useState();
 
+    //Zufallsgenerator für Zahlen zwischen 1 und 809
     var getRandomPokemon = Math.round(Math.random() * (809 - 1)) + 1;
 
+    //Fetch für gewähltes Pokemon
     useEffect(() => {
        const fetchData = async() => {
         await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${parseInt(id.selectPokemon)}`)
@@ -19,7 +21,7 @@ const Arena = ({selectPokemon}) => {
        fetchData();
       }, []);
 
-
+      //Fetch für zufälliges Pokemon
       useEffect(() => {
          const fetchData = async() => {
           await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${getRandomPokemon}`)
@@ -33,13 +35,15 @@ const Arena = ({selectPokemon}) => {
     return(
         <>
         {kampfPokemon ? (<div className="App">
-        <h2>{kampfPokemon.name.english}</h2>
+            {/* //Deine Pokemon */}
+             <h2>{kampfPokemon.name.english}</h2>
              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>
              <p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p>
              <p>HP: {kampfPokemon.base.HP}</p>
              <p>Attack: {kampfPokemon.base.Attack}</p>
              <p>Defense: {kampfPokemon.base.Defense}</p>  
-              
+
+              {/* Zufälliges Pokemon */}
              <h2>{randomPokemon.name.english}</h2>
              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage'></img>
              <p>{randomPokemon.type[0]} {randomPokemon.type[1]} </p>
@@ -50,7 +54,7 @@ const Arena = ({selectPokemon}) => {
 
 
 
-             <Link to={"../"} className="zurück" >Nochmal Kämpfen</Link>
+             <Link to={"../"} className="zurück" >Hauptmenü</Link>
 
       </div>) : ("Loading...")}
       </>
