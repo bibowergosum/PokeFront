@@ -7,14 +7,14 @@ import Highscore from './components/highscore';
 import AuswahlID from './components/auswahlID';
 import Detail from './components/detail';
 import {useState, useEffect} from "react";
+import axios from 'axios';
 
 function App(props) {
   const [pokemon, setPokemon] = useState();
 
   useEffect(() => {
-    fetch ("https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json")
-      .then((response) => response.json())
-      .then((data) => setPokemon(data))
+    axios.get ("https://pokedex1234.herokuapp.com/pokemon")
+      .then((res) => setPokemon(res.data))
       .catch((err) => console.log(err));
   }, []);
 

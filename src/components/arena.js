@@ -1,22 +1,31 @@
+import axios from "axios";
 import React, {useEffect, useState} from "react"
-import {Link} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 
 
 const Arena = ({selectPokemon}) => {
-    const [kampfPokemon, setKampfPokemon] = useState;
+    const id = {selectPokemon} 
+    const [kampfPokemon, setKampfPokemon] = useState();
+
     useEffect(() => {
-        fetch ("https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json")
-          .then((response) => response.json())
-          .then((data) => setKampfPokemon(data))
-          .catch((err) => console.log(err));
+       const fetchData = async() => {
+        await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${parseInt(id.selectPokemon)}`)
+        .then((res) => setKampfPokemon(res.data))
+        .catch((err) => console.log(err));
+       }
+       fetchData();
       }, []);
- console.log(selectPokemon)
- 
+//  console.log(selectPokemon)
+//  console.log(kampfPokemon)
+
     return(
-        <div>
-            <h2>Hier kämpfen die Pokemon</h2>
+        <>
+        {kampfPokemon ? (<div className="App">
+        <h2></h2>      
+              
            
-        </div>
+      </div>) : ("Loading...")}
+      </>
     )
 }
 
