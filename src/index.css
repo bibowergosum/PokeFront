@@ -42,6 +42,10 @@ code {
   animation: pulse 7s infinite;
 }
 
+
+
+
+
 @keyframes pulse {
   0% {
     color: rgb(178, 212, 24);
@@ -95,9 +99,10 @@ code {
 
 .zurück {
   text-decoration: none;
-  justify-content: center;
+  font-size:x-large;
   color: rgb(31, 18, 214);
   font-weight: bolder;
+  
   
 }
 
@@ -110,19 +115,50 @@ a.auswahlzurück{
   display: flex;
 }
 
+/* Arena Bilder   */
+
 .pokeImage {
   width: 15%;
   height: auto;
   cursor: pointer;
+ border-color: rgb(184, 127, 57);
+ border-style: double;
+  display:block;
+   margin:0 auto;
+
 }
+/* Arena VS  */
+.pupili {
+  font-size: 80px;
+  margin-bottom: 100px;
+  border-radius: 10px;
+  text-shadow: 2px 2px 5px rgb(240, 20, 20);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  animation: pulse 7s infinite;
+ 
+}
+/* Arena Pokemon Beschreibung  */
+p {
+  color:bisque;
+   display:block;
+   margin:0 auto;
+   text-align: center;
+}
+
 
 .detail {
   text-align: center;
+  
+  
 }
 
 .detail p {
   text-align: center;
   font-weight: bolder;
+  
+  
 }
 
 .AuswahlID p{
@@ -130,7 +166,7 @@ a.auswahlzurück{
 }
 
 .detail p{
-  color: rgb(194, 6, 6);
+  color: rgb(223, 206, 206);
 }
 
 .select{
@@ -174,3 +210,9 @@ button{
   border-radius: 12em;
   background-color: lightgray;
 }
+
+.property {
+border-color: bisque;
+
+}
+
