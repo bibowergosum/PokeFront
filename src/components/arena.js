@@ -1,12 +1,10 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react"
-import {Link, useParams} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 
 const Arena = ({selectPokemon}) => {
-<<<<<<< HEAD
-    const [kampfPokemon, setKampfPokemon] = useState();
-=======
+
     const id = {selectPokemon} 
     const [kampfPokemon, setKampfPokemon] = useState();
     const [randomPokemon, setRandomPokemon] = useState();
@@ -15,7 +13,6 @@ const Arena = ({selectPokemon}) => {
     var getRandomPokemon = Math.round(Math.random() * (809 - 1)) + 1;
 
     //Fetch für gewähltes Pokemon
->>>>>>> 49c73422024d13ea5656228df119982d9512b676
     useEffect(() => {
        const fetchData = async() => {
         await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${parseInt(id.selectPokemon)}`)
