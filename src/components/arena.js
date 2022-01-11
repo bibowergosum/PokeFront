@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react"
-import {Link, useParams} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 
 const Arena = ({selectPokemon}) => {
@@ -34,7 +34,9 @@ const Arena = ({selectPokemon}) => {
 
     return(
         <>
-        {kampfPokemon ? (<div className="App">
+        {(kampfPokemon && randomPokemon) ? (<div className="App">
+
+        <Link to={"../"} className="zurück" >Hauptmenü</Link>
             {/* //Deine Pokemon */}
              <h2>{kampfPokemon.name.english}</h2>
              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>
@@ -42,7 +44,7 @@ const Arena = ({selectPokemon}) => {
              <p>HP: {kampfPokemon.base.HP}</p>
              <p>Attack: {kampfPokemon.base.Attack}</p>
              <p>Defense: {kampfPokemon.base.Defense}</p>  
-
+                <h3>Gegen</h3>
               {/* Zufälliges Pokemon */}
              <h2>{randomPokemon.name.english}</h2>
              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage'></img>
@@ -51,10 +53,7 @@ const Arena = ({selectPokemon}) => {
              <p>Attack: {randomPokemon.base.Attack}</p>
              <p>Defense: {randomPokemon.base.Defense}</p>  
 
-
-
-
-             <Link to={"../"} className="zurück" >Hauptmenü</Link>
+             
 
       </div>) : ("Loading...")}
       </>
