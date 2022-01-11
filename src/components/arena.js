@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react"
-import {Link, useParams} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 
 const Arena = ({selectPokemon}) => {
@@ -9,7 +9,7 @@ const Arena = ({selectPokemon}) => {
     const [randomPokemon, setRandomPokemon] = useState();
 
     //Zufallsgenerator für Zahlen zwischen 1 und 809
-    var getRandomPokemon = Math.round(Math.random() * (809 - 1)) + 1;
+    let getRandomPokemon = Math.round(Math.random() * (809 - 1)) + 1;
 
     //Fetch für gewähltes Pokemon
     useEffect(() => {
@@ -30,18 +30,34 @@ const Arena = ({selectPokemon}) => {
          }
          fetchData();
         }, []);
-
+        
+const fight = () => {
+if (kampfPokemon.base.HP > randomPokemon.base.HP) {
+    alert("Dein Pokemon hat gewonnen!");
+}
+else if (kampfPokemon.base.HP < randomPokemon.base.HP) {
+    alert ("Dein Pokemon hat verloren und ist jetzt tot.");
+}
+else if (kampfPokemon.base.HP === randomPokemon.base.HP) {
+    alert ("Unentschieden");
+}
+};
 
     return(
         <>
-         {(kampfPokemon && randomPokemon) ? (<div className="App">
+        {(kampfPokemon && randomPokemon) ? (<div className="App">
+
+        <Link to={"../"} className="zurück" >Hauptmenü</Link>
             {/* //Deine Pokemon */}
              <h2>{kampfPokemon.name.english}</h2>
-             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>
+             <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>
              <p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p>
              <p>HP: {kampfPokemon.base.HP}</p>
              <p>Attack: {kampfPokemon.base.Attack}</p>
              <p>Defense: {kampfPokemon.base.Defense}</p>  
+
+            <h3 className="pupili">VS.</h3>
+       
 
               {/* Zufälliges Pokemon */}
              <h2>{randomPokemon.name.english}</h2>
@@ -50,11 +66,8 @@ const Arena = ({selectPokemon}) => {
              <p>HP: {randomPokemon.base.HP}</p>
              <p>Attack: {randomPokemon.base.Attack}</p>
              <p>Defense: {randomPokemon.base.Defense}</p>  
-
-
-
-
-             <Link to={"../"} className="zurück" >Hauptmenü</Link>
+             <button onClick={fight}>Jetzt kämpfen</button>
+             
 
       </div>) : ("Loading...")}
       </>
