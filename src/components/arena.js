@@ -39,12 +39,15 @@ const Arena = ({selectPokemon}) => {
         <Link to={"../"} className="zurück" >Hauptmenü</Link>
             {/* //Deine Pokemon */}
              <h2>{kampfPokemon.name.english}</h2>
-             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>
+             <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>
              <p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p>
              <p>HP: {kampfPokemon.base.HP}</p>
              <p>Attack: {kampfPokemon.base.Attack}</p>
              <p>Defense: {kampfPokemon.base.Defense}</p>  
-                <h3>Gegen</h3>
+
+            <h3 className="pupili">VS.</h3>
+       
+
               {/* Zufälliges Pokemon */}
              <h2>{randomPokemon.name.english}</h2>
              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage'></img>
