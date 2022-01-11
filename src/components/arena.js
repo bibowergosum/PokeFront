@@ -30,16 +30,16 @@ const Arena = ({selectPokemon}) => {
          }
          fetchData();
         }, []);
-        
+
 const fight = () => {
 if (kampfPokemon.base.HP > randomPokemon.base.HP) {
-    alert("Dein Pokemon hat gewonnen!");
+    alert("Dein Pokemon hat gewonnen!"); window.location.reload();
 }
 else if (kampfPokemon.base.HP < randomPokemon.base.HP) {
-    alert ("Dein Pokemon hat verloren und ist jetzt tot.");
+    alert ("Dein Pokemon hat verloren und ist jetzt tot."); window.location.reload();
 }
 else if (kampfPokemon.base.HP === randomPokemon.base.HP) {
-    alert ("Unentschieden");
+    alert ("Unentschieden"); window.location.reload();
 }
 };
 
