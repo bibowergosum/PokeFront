@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 
 const Arena = ({selectPokemon}) => {
-    const [kampfPokemon, setKampfPokemon] = useState;
+    const [kampfPokemon, setKampfPokemon] = useState();
     useEffect(() => {
         fetch ("https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/pokedex.json")
           .then((response) => response.json())
