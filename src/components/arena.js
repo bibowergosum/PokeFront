@@ -4,7 +4,6 @@ import {Link} from "react-router-dom"
 
 
 const Arena = ({selectPokemon}) => {
-
     const id = {selectPokemon} 
     const [kampfPokemon, setKampfPokemon] = useState();
     const [randomPokemon, setRandomPokemon] = useState();
