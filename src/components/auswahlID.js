@@ -6,7 +6,6 @@ const AuswahlID = ({pokemon}) => {
     const { id } = useParams();
     const poke = pokemon && pokemon.find((element) => element.id == id)
    
-    console.log(id)
     return(
         <>
         {poke ? ( 
