@@ -34,7 +34,7 @@ const Arena = ({selectPokemon}) => {
 
     return(
         <>
-        {kampfPokemon ? (<div className="App">
+         {(kampfPokemon && randomPokemon) ? (<div className="App">
             {/* //Deine Pokemon */}
              <h2>{kampfPokemon.name.english}</h2>
              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>

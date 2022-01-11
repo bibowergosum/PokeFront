@@ -113,8 +113,7 @@ a.auswahlzurück{
 .pokeImage {
   width: 15%;
   height: auto;
-  cursor: pointer;
-}
+  }
 
 .detail {
   text-align: center;
