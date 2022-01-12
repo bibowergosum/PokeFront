@@ -8,43 +8,44 @@ const Arena = ({selectPokemon}) => {
     const [kampfPokemon, setKampfPokemon] = useState();
     const [randomPokemon, setRandomPokemon] = useState();
 
-    // Zufallsgenerator für Zahlen zwischen 1 und 809
-    let getRandomPokemon = Math.round(1 * Math.random() * (809 - 1)) + 1;
-  
-    // function getRandomPokemon(min, max) {
-    //     return Math.random() * (809 - 1) + 1;
-    //   }
 
+    
+    
     //Fetch für gewähltes Pokemon
     useEffect(() => {
-       const fetchData = async() => {
-        await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${id.selectPokemon}`)
-        .then((res) => setKampfPokemon(res.data))
-        .catch((err) => console.log(err));
-       }
-       fetchData();
-      }, [id.selectPokemon]);
-
-      //Fetch für zufälliges Pokemon
-      useEffect(() => {
-         const fetchData = async() => {
-          await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${getRandomPokemon}`)
-          .then((res) => setRandomPokemon(res.data))
-          .catch((err) => console.log(err));
-         }
+        const fetchData = async() => {
+            await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${id.selectPokemon}`)
+            .then((res) => setKampfPokemon(res.data))
+            .catch((err) => console.log(err));
+        }
+        fetchData();
+    }, [id.selectPokemon]);
+    
+    //Fetch für zufälliges Pokemon
+    useEffect(() => {
+            // Zufallsgenerator für Zahlen zwischen 1 und 809
+        const randomPokemonID =  Math.round(1 * Math.random() * (809 - 1)) + 1
+        
+        const fetchData = async() => {
+            await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${randomPokemonID}`)
+            .then((res) => setRandomPokemon(res.data))
+            .catch((err) => console.log(err));
+        }
          fetchData();
         }, []);
 
 const fight = () => {
 if (kampfPokemon.base.HP > randomPokemon.base.HP) {
-    alert("Dein Pokemon hat gewonnen!"); window.location.reload();
+    alert("Dein Pokemon hat gewonnen!");
+  
 }
 else if (kampfPokemon.base.HP < randomPokemon.base.HP) {
-    alert ("Dein Pokemon hat verloren und ist jetzt tot."); window.location.reload();
+    alert ("Dein Pokemon hat verloren und ist jetzt tot.");
 }
 else if (kampfPokemon.base.HP === randomPokemon.base.HP) {
-    alert ("Unentschieden"); window.location.reload();
+    alert ("Unentschieden"); 
 }
+window.location.reload();
 };
 
     return(
