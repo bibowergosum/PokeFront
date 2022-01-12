@@ -68,8 +68,8 @@ code {
   text-decoration: none;
   color: yellow;
   font-weight: bolder;
- 
-  padding: 10px;
+ margin-bottom: 150px;
+  
 }
 
 .highscorelink {
@@ -203,8 +203,7 @@ h1, h2, h3{
   justify-content:flex-start;
   flex-direction: column;
   border-style: groove;
- border-color: goldenrod;
-   align-items: center;
+ border-color: goldenrod;  align-items: center;
   
 }
 
