@@ -9,8 +9,11 @@ const Arena = ({selectPokemon}) => {
     const [randomPokemon, setRandomPokemon] = useState();
 
     //Zufallsgenerator für Zahlen zwischen 1 und 809
-    let getRandomPokemon = Math.round(1 * Math.random() * (809 - 1)) + 1;
+    // let getRandomPokemon = Math.round(1 * Math.random() * (809 - 1)) + 1;
   
+    function getRandomPokemon(min, max) {
+        return Math.random() * (809 - 1) + 1;
+      }
 
     //Fetch für gewähltes Pokemon
     useEffect(() => {
