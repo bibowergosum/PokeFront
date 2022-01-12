@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useEffect, useState} from "react"
-import {Link, useParams} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 
 const Arena = ({selectPokemon}) => {
@@ -8,60 +8,89 @@ const Arena = ({selectPokemon}) => {
     const [kampfPokemon, setKampfPokemon] = useState();
     const [randomPokemon, setRandomPokemon] = useState();
 
-    //Zufallsgenerator für Zahlen zwischen 1 und 809
-    var getRandomPokemon = Math.round(Math.random() * (809 - 1)) + 1;
 
+    
+    
     //Fetch für gewähltes Pokemon
     useEffect(() => {
-       const fetchData = async() => {
-        await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${parseInt(id.selectPokemon)}`)
-        .then((res) => setKampfPokemon(res.data))
-        .catch((err) => console.log(err));
-       }
-       fetchData();
-      }, []);
-
-      //Fetch für zufälliges Pokemon
-      useEffect(() => {
-         const fetchData = async() => {
-          await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${getRandomPokemon}`)
-          .then((res) => setRandomPokemon(res.data))
-          .catch((err) => console.log(err));
-         }
+        const fetchData = async() => {
+            await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${id.selectPokemon}`)
+            .then((res) => setKampfPokemon(res.data))
+            .catch((err) => console.log(err));
+        }
+        fetchData();
+    }, [id.selectPokemon]);
+    
+    //Fetch für zufälliges Pokemon
+    useEffect(() => {
+            // Zufallsgenerator für Zahlen zwischen 1 und 809
+        const randomPokemonID =  Math.round(1 * Math.random() * (809 - 1)) + 1
+        
+        const fetchData = async() => {
+            await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${randomPokemonID}`)
+            .then((res) => setRandomPokemon(res.data))
+            .catch((err) => console.log(err));
+        }
          fetchData();
         }, []);
 
+const fight = () => {
+if (kampfPokemon.base.HP > randomPokemon.base.HP) {
+    alert("Dein Pokemon hat gewonnen!");
+  
+}
+else if (kampfPokemon.base.HP < randomPokemon.base.HP) {
+    alert ("Dein Pokemon hat verloren und ist jetzt tot.");
+}
+else if (kampfPokemon.base.HP === randomPokemon.base.HP) {
+    alert ("Unentschieden"); 
+}
+window.location.reload();
+};
 
     return(
         <>
-    
-          {(kampfPokemon && randomPokemon) ? (<div className="App">
+
+        {(kampfPokemon && randomPokemon) ? (<div className="App">
+
+        <Link to={"../"} className="zurück" >Hauptmenü</Link>
             {/* //Deine Pokemon */}
-            
-             <h2>{kampfPokemon.name.english}</h2>
-             <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>
-             <p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p>
-             <p>HP: {kampfPokemon.base.HP}</p>
-             <p>Attack: {kampfPokemon.base.Attack}</p>
-             <p>Defense: {kampfPokemon.base.Defense}</p>  
+           <div className='pokeselect2'>
+             <h2>{kampfPokemon.name.english}</h2><br></br>
+             <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage' alt="Ausgewähltes Pokemon"></img>
+             <div><p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p> <br></br>
              
 
-            
-            <h3 className="pupili">VS.</h3>
+             <p>HP: {kampfPokemon.base.HP}</p>
              
+             <p>Attack: {kampfPokemon.base.Attack}</p>
+
+             
+             <p>Defense: {kampfPokemon.base.Defense}</p> 
+             </div>
+            
+            <h3 className="pupili" onClick={fight}>VS.</h3>
+       
+
+
               {/* Zufälliges Pokemon */}
-             <h2>{randomPokemon.name.english}</h2>
-             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage'></img>
-             <p>{randomPokemon.type[0]} {randomPokemon.type[1]} </p>
+             <div><p>{randomPokemon.type[0]} {randomPokemon.type[1]} </p> <br></br>
              <p>HP: {randomPokemon.base.HP}</p>
              <p>Attack: {randomPokemon.base.Attack}</p>
-             <p>Defense: {randomPokemon.base.Defense}</p> 
+
               
 
 
 
 
              <Link to={"../"} className="zurück" >Hauptmenü</Link>
+
+             <p>Defense: {randomPokemon.base.Defense}</p>  
+             </div>
+             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage' alt="Zufälliges Pokemon"></img>
+             <h2>{randomPokemon.name.english}</h2>
+             </div>
+
 
       </div>) : ("Loading...")}
       </>
