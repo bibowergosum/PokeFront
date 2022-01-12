@@ -5,7 +5,7 @@ import Arena from './arena.js';
 
 const Auswahl = ({pokemon}) => {
    const[selectPokemon, setSelectPokemon] = useState();
-   const [input, setInput] = useState("")
+//    const [input, setInput] = useState("")
 
     function handleClick(e) {
         setSelectPokemon(e.target.id)
