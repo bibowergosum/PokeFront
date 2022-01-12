@@ -19,7 +19,7 @@ const Arena = ({selectPokemon}) => {
         .catch((err) => console.log(err));
        }
        fetchData();
-      }, []);
+      }, ['id.selectPokemon']);
 
       //Fetch für zufälliges Pokemon
       useEffect(() => {
@@ -29,7 +29,7 @@ const Arena = ({selectPokemon}) => {
           .catch((err) => console.log(err));
          }
          fetchData();
-        }, []);
+        }, ['getRandomPokemon']);
 
 const fight = () => {
 if (kampfPokemon.base.HP > randomPokemon.base.HP) {
