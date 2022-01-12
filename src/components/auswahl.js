@@ -23,7 +23,7 @@ const Auswahl = ({pokemon}) => {
             <h2>Wähle dein Pokemon</h2>
             <Link to={"../"} className="auswahlzurück" >Zurück</Link>
         <form onSubmit={handleSubmit}>
-            <input id="input" required name="search" type="text" placeholder="Pokemon suchen"/>
+            <input id={input} required name="search" type="text" placeholder="Pokemon suchen"/>
             <button id="searchbutton">Suchen</button>
         </form>
         <br></br>
