@@ -30,7 +30,7 @@ const Arena = ({selectPokemon}) => {
           .catch((err) => console.log(err));
          }
          fetchData();
-        }, [getRandomPokemon]);
+        }, []);
 
 const fight = () => {
 if (kampfPokemon.base.HP > randomPokemon.base.HP) {
