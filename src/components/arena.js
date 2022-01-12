@@ -34,24 +34,29 @@ const Arena = ({selectPokemon}) => {
 
     return(
         <>
+    
           {(kampfPokemon && randomPokemon) ? (<div className="App">
             {/* //Deine Pokemon */}
-            <div className="bubu">
+            
              <h2>{kampfPokemon.name.english}</h2>
              <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>
              <p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p>
              <p>HP: {kampfPokemon.base.HP}</p>
              <p>Attack: {kampfPokemon.base.Attack}</p>
              <p>Defense: {kampfPokemon.base.Defense}</p>  
-             </div>
+             
+
+            
             <h3 className="pupili">VS.</h3>
+             
               {/* Zufälliges Pokemon */}
              <h2>{randomPokemon.name.english}</h2>
              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage'></img>
              <p>{randomPokemon.type[0]} {randomPokemon.type[1]} </p>
              <p>HP: {randomPokemon.base.HP}</p>
              <p>Attack: {randomPokemon.base.Attack}</p>
-             <p>Defense: {randomPokemon.base.Defense}</p>  
+             <p>Defense: {randomPokemon.base.Defense}</p> 
+              
 
 
 

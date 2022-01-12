@@ -120,7 +120,6 @@ a.auswahlzurück{
 /* Arena Bilder   */
 
 
-
 .pokeImage {
   width: 15%;
   height: auto;
@@ -204,8 +203,8 @@ h1, h2, h3{
   justify-content:flex-start;
   flex-direction: column;
   border-style: groove;
-  border-color: goldenrod;
-  align-items: center;
+ border-color: goldenrod;
+   align-items: center;
   
 }
 
