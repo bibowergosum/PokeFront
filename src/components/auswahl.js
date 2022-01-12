@@ -8,7 +8,6 @@ const Auswahl = ({pokemon}) => {
 
     function handleClick(e) {
         e.preventDefault();
-        console.log('hier')
         setSelectPokemon  (e.target.value)
       }
 
@@ -22,8 +21,8 @@ const Auswahl = ({pokemon}) => {
         {pokemon.map((poke, index) => (        
             <div className='pokeselect' key={index}>    
             <h2 className='title'>{poke.name.english}</h2> 
-            <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png`} alt="Alle Pokemon"></img>          
-            <button onClick={handleClick} value={poke.id} type="button">Auswählen</button>
+            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png`} alt="Alle Pokemon"></img>          
+            <button value={poke.id} onClick={handleClick} type="button">Auswählen</button>
             <Link to={`/auswahl/${poke.id}`} className="pupi2" >DETAILS</Link> 
                 
             </div>       
