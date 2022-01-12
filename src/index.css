@@ -201,6 +201,10 @@ h1, h2, h3{
   overflow-x: clip;
 }
 
+.pokeselect img {
+  cursor: pointer;
+}
+
 .select h2{
   color:chartreuse
 }

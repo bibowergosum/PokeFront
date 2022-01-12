@@ -9,7 +9,8 @@ const Arena = ({selectPokemon}) => {
     const [randomPokemon, setRandomPokemon] = useState();
 
     //Zufallsgenerator für Zahlen zwischen 1 und 809
-    let getRandomPokemon = Math.round(Math.random() * (809 - 1)) + 1;
+    let getRandomPokemon = Math.round(1 * Math.random() * (809 - 1)) + 1;
+  
 
     //Fetch für gewähltes Pokemon
     useEffect(() => {
@@ -31,7 +32,7 @@ const Arena = ({selectPokemon}) => {
           .catch((err) => console.log(err));
          }
          fetchData();
-        }, []);
+        }, [getRandomPokemon]);
 
 const fight = () => {
 if (kampfPokemon.base.HP > randomPokemon.base.HP) {
