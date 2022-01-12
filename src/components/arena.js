@@ -18,8 +18,6 @@ const Arena = ({selectPokemon}) => {
         await axios.get (`https://pokedex1234.herokuapp.com/pokemon/${id.selectPokemon}`)
         .then((res) => setKampfPokemon(res.data))
         .catch((err) => console.log(err));
-        // console.log(parseInt(id.selectPokemon))
-        console.log('selected pokemon', id.selectPokemon)
        }
        fetchData();
       }, [id.selectPokemon]);
