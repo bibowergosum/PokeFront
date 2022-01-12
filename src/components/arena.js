@@ -51,7 +51,7 @@ else if (kampfPokemon.base.HP === randomPokemon.base.HP) {
             {/* //Deine Pokemon */}
              <button onClick={fight}>Jetzt kämpfen</button>
              <h2>{kampfPokemon.name.english}</h2>
-             <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>
+             <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage' alt="Ausgewähltes Pokemon"></img>
              <p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p>
              <p>HP: {kampfPokemon.base.HP}</p>
              <p>Attack: {kampfPokemon.base.Attack}</p>
@@ -62,7 +62,7 @@ else if (kampfPokemon.base.HP === randomPokemon.base.HP) {
 
               {/* Zufälliges Pokemon */}
              <h2>{randomPokemon.name.english}</h2>
-             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage'></img>
+             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage' alt="Zufälliges Pokemon"></img>
              <p>{randomPokemon.type[0]} {randomPokemon.type[1]} </p>
              <p>HP: {randomPokemon.base.HP}</p>
              <p>Attack: {randomPokemon.base.Attack}</p>

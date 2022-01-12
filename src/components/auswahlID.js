@@ -16,7 +16,7 @@ const AuswahlID = ({pokemon}) => {
             <p>Typ: {poke.type[0]} {poke.type[1]} </p>
             <p>ID: {poke.id} </p>
             <Outlet />
-            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png`} className='pokeImage'></img>
+            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png`} className='pokeImage' alt="Ausgewältes Pokemon"></img>
               <br></br><br></br>  
             <div><Link to={`../auswahl/${id}/${id}`} 
             className="zurück" >Info</Link>
