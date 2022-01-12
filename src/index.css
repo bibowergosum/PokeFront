@@ -68,6 +68,8 @@ code {
   text-decoration: none;
   color: yellow;
   font-weight: bolder;
+ 
+  padding: 10px;
 }
 
 .highscorelink {
@@ -116,6 +118,8 @@ a.auswahlzurück{
 }
 
 /* Arena Bilder   */
+
+
 
 .pokeImage {
   width: 15%;
@@ -197,10 +201,23 @@ h1, h2, h3{
 
 .pokeselect{
   display:flex;
-  justify-content: center;
+  justify-content:flex-start;
+  flex-direction: column;
+  border-style: groove;
+  border-color: goldenrod;
   align-items: center;
-  overflow-x: clip;
+  
 }
+
+
+.pokeselect button {
+
+  width: 200px;
+  font-size: large;
+  border-style:solid;
+  border-color: red;
+}
+
 
 .select h2{
   color:chartreuse
