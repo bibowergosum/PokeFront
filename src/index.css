@@ -64,7 +64,12 @@ code {
   text-decoration: none;
   color: yellow;
   font-weight: bolder;
+
+ 
+  padding: 10px;
+
   opacity: 0.7;
+
 }
 
 .highscorelink {
@@ -111,6 +116,7 @@ a.auswahlzurück {
 }
 
 /* Arena Bilder   */
+
 
 .pokeImage {
   width: 15%;
@@ -193,15 +199,27 @@ h3 {
   color: rgb(194, 6, 6);
 }
 
-.pokeselect {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: clip;
+.pokeselect{
+  display:flex;
+  justify-content:flex-start;
+  flex-direction: column;
+  border-style: groove;
+ border-color: goldenrod;
+   align-items: center;
+  
+}
+
+.pokeselect button {
+
+  width: 200px;
+  font-size: large;
+  border-style:solid;
+  border-color: red;
 }
 
 .select h2 {
   color: chartreuse;
+
 }
 
 button {

@@ -50,6 +50,7 @@ window.location.reload();
 
     return(
         <>
+
         {(kampfPokemon && randomPokemon) ? (<div className="App">
 
         <Link to={"../"} className="zurück" >Hauptmenü</Link>
@@ -59,9 +60,11 @@ window.location.reload();
              <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage' alt="Ausgewähltes Pokemon"></img>
              <div><p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p> <br></br>
              
+
              <p>HP: {kampfPokemon.base.HP}</p>
              
              <p>Attack: {kampfPokemon.base.Attack}</p>
+
              
              <p>Defense: {kampfPokemon.base.Defense}</p> 
              </div>
@@ -69,15 +72,25 @@ window.location.reload();
             <h3 className="pupili" onClick={fight}>VS.</h3>
        
 
+
               {/* Zufälliges Pokemon */}
              <div><p>{randomPokemon.type[0]} {randomPokemon.type[1]} </p> <br></br>
              <p>HP: {randomPokemon.base.HP}</p>
              <p>Attack: {randomPokemon.base.Attack}</p>
+
+              
+
+
+
+
+             <Link to={"../"} className="zurück" >Hauptmenü</Link>
+
              <p>Defense: {randomPokemon.base.Defense}</p>  
              </div>
              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage' alt="Zufälliges Pokemon"></img>
              <h2>{randomPokemon.name.english}</h2>
              </div>
+
 
       </div>) : ("Loading...")}
       </>
