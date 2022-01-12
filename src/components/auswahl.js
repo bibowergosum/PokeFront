@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Link, useParams, Outlet} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Arena from './arena.js';
 
 

@@ -2,7 +2,6 @@ import './index.css';
 import {Routes, Route} from "react-router-dom";
 import Home from './components/home.js';
 import Auswahl from './components/auswahl.js';
-import Arena from './components/arena.js';
 import Highscore from './components/highscore';
 import AuswahlID from './components/auswahlID';
 import Detail from './components/detail';
