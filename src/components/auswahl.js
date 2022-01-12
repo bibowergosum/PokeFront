@@ -11,21 +11,21 @@ const Auswahl = ({pokemon}) => {
         setSelectPokemon(e.target.id)
       }
 
-      const handleSubmit = (event) => {
-        event.preventDefault()
-        setInput(event.target.input.value)
-        event.target.input.value="";
-    }
+    // function handleSubmit(e) {
+    //     e.preventDefault()
+    //     setInput(e.target.input.value)
+    //     e.target.input.value="";
+    // }
 
     return (
         <>
         {selectPokemon ? <Arena selectPokemon={selectPokemon}/> : (<div>
             <h2>Wähle dein Pokemon</h2>
             <Link to={"../"} className="auswahlzurück" >Zurück</Link>
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
             <input id={input} required name="search" type="text" placeholder="Pokemon suchen"/>
-            <button id="searchbutton">Suchen</button>
-        </form>
+            <button type="submit" id="searchbutton">Suchen</button>
+        </form> */}
         <br></br>
         <div className="select">
         {pokemon.map((poke, index) => (        
