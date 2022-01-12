@@ -49,6 +49,7 @@ else if (kampfPokemon.base.HP === randomPokemon.base.HP) {
 
         <Link to={"../"} className="zurück" >Hauptmenü</Link>
             {/* //Deine Pokemon */}
+             <button onClick={fight}>Jetzt kämpfen</button>
              <h2>{kampfPokemon.name.english}</h2>
              <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage'></img>
              <p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p>
@@ -66,7 +67,6 @@ else if (kampfPokemon.base.HP === randomPokemon.base.HP) {
              <p>HP: {randomPokemon.base.HP}</p>
              <p>Attack: {randomPokemon.base.Attack}</p>
              <p>Defense: {randomPokemon.base.Defense}</p>  
-             <button onClick={fight}>Jetzt kämpfen</button>
              
 
       </div>) : ("Loading...")}

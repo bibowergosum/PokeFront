@@ -4,7 +4,7 @@ import { Link, useParams, Outlet } from "react-router-dom"
 
 const AuswahlID = ({pokemon}) => {
     const { id } = useParams();
-    const poke = pokemon && pokemon.find((element) => element.id == id)
+    const poke = pokemon && pokemon.find((element) => element.id === parseInt(id, 10))
    
     return(
         <>
