@@ -42,10 +42,6 @@ code {
   animation: pulse 7s infinite;
 }
 
-
-
-
-
 @keyframes pulse {
   0% {
     color: rgb(178, 212, 24);
@@ -64,10 +60,11 @@ code {
   }
 }
 
-.pupi2{
+.pupi2 {
   text-decoration: none;
   color: yellow;
   font-weight: bolder;
+  opacity: 0.7;
 }
 
 .highscorelink {
@@ -99,19 +96,17 @@ code {
 
 .zurück {
   text-decoration: none;
-  font-size:x-large;
+  font-size: x-large;
   color: rgb(31, 18, 214);
   font-weight: bolder;
-  
-  
 }
 
-a.auswahlzurück{
+a.auswahlzurück {
   text-decoration: none;
   justify-content: center;
   color: rgb(31, 18, 214);
   font-weight: bolder;
-  padding: none;  
+  padding: none;
   display: flex;
 }
 
@@ -120,11 +115,10 @@ a.auswahlzurück{
 .pokeImage {
   width: 15%;
   height: auto;
- border-color: rgb(184, 127, 57);
- border-style: double;
-  display:block;
-   margin:0 auto;
-
+  border-color: rgb(184, 127, 57);
+  border-style: double;
+  display: block;
+  margin: 0 auto;
 }
 /* Arena VS  */
 .pupili {
@@ -136,86 +130,97 @@ a.auswahlzurück{
   text-align: center;
   text-decoration: none;
   animation: pulse 7s infinite;
- 
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 1em;
+}
+
+.pupili:hover {
+  opacity: 1;
 }
 /* Arena Pokemon Beschreibung  */
 p {
-  color:bisque;
-   display:block;
-   margin:0 auto;
-   text-align: center;
+  color: bisque;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
-
 
 .detail {
   text-align: center;
-  
-  
 }
 
 .detail p {
   text-align: center;
   font-weight: bolder;
-  
-  
 }
 
-.AuswahlID p{
+.AuswahlID p {
   color: rgb(194, 6, 6);
 }
 
-.detail p{
+.detail p {
   color: rgb(223, 206, 206);
 }
 
-.select{
+.select {
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* background: black;
   opacity: 0.9; */
-  padding: 9px
+  padding: 9px;
 }
 
 .select img {
   width: 45%;
   height: auto;
+}
+
+.select button:hover,
+img:hover,
+a:hover {
+  opacity: 1;
+}
+.select button {
+  cursor: pointer;
   opacity: 0.7;
 }
 
-.select button:hover, img:hover, a:hover{
-  opacity:1; 
-}
-.select button{
-  cursor: pointer;
-}
-
-h1, h2, h3{
+h1,
+h2,
+h3 {
   text-align: center;
   color: rgb(194, 6, 6);
 }
 
-.pokeselect{
-  display:flex;
+.pokeselect {
+  display: flex;
   justify-content: center;
   align-items: center;
   overflow-x: clip;
 }
 
 .pokeselect img {
-  cursor: pointer;
 }
 
-.select h2{
-  color:chartreuse
+.select h2 {
+  color: chartreuse;
 }
 
-button{
+button {
   border-radius: 12em;
   background-color: lightgray;
 }
 
 .property {
-border-color: bisque;
-
+  border-color: bisque;
 }
 
+.pokeselect2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: clip;
+  padding-left: 1em;
+  padding-right: 1em;
+}

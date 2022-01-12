@@ -53,25 +53,30 @@ else if (kampfPokemon.base.HP === randomPokemon.base.HP) {
 
         <Link to={"../"} className="zurück" >Hauptmenü</Link>
             {/* //Deine Pokemon */}
-             <button onClick={fight}>Jetzt kämpfen</button>
-             <h2>{kampfPokemon.name.english}</h2>
+           <div className='pokeselect2'>
+             <h2>{kampfPokemon.name.english}</h2><br></br>
              <img  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${kampfPokemon.id}.png`} className='pokeImage' alt="Ausgewähltes Pokemon"></img>
-             <p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p>
+             <div><p>{kampfPokemon.type[0]} {kampfPokemon.type[1]} </p> <br></br>
+             
              <p>HP: {kampfPokemon.base.HP}</p>
+             
              <p>Attack: {kampfPokemon.base.Attack}</p>
-             <p>Defense: {kampfPokemon.base.Defense}</p>  
-
-            <h3 className="pupili">VS.</h3>
+             
+             <p>Defense: {kampfPokemon.base.Defense}</p> 
+             </div>
+            
+            <h3 className="pupili" onClick={fight}>VS.</h3>
        
 
               {/* Zufälliges Pokemon */}
-             <h2>{randomPokemon.name.english}</h2>
-             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage' alt="Zufälliges Pokemon"></img>
-             <p>{randomPokemon.type[0]} {randomPokemon.type[1]} </p>
+             <div><p>{randomPokemon.type[0]} {randomPokemon.type[1]} </p> <br></br>
              <p>HP: {randomPokemon.base.HP}</p>
              <p>Attack: {randomPokemon.base.Attack}</p>
              <p>Defense: {randomPokemon.base.Defense}</p>  
-             
+             </div>
+             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${randomPokemon.id}.png`} className='pokeImage' alt="Zufälliges Pokemon"></img>
+             <h2>{randomPokemon.name.english}</h2>
+             </div>
 
       </div>) : ("Loading...")}
       </>
